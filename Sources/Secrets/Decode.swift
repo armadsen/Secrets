@@ -12,11 +12,13 @@ import ROT
 struct Decode: ParsableCommand {
     static let configuration = CommandConfiguration(abstract: "Decode a secret code back into readable text")
 
+    @OptionGroup var globalOptions: GlobalOptions
+
     @Argument(help: "The string you want to decode")
     var inputString: String
 
     func run() throws {
-        let rot = ROTAlgorithm()
+        let rot = ROTAlgorithm(rotationDistance: globalOptions.rotationDistance)
         print(rot.decode(inputString))
     }
 }
