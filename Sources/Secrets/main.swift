@@ -5,7 +5,7 @@ import ArgumentParser
 struct Secrets: ParsableCommand {
     static let configuration = CommandConfiguration(commandName: "secrets",
                                                     abstract: "Create and decode secret messages",
-                                                    subcommands: [Encode.self],
+                                                    subcommands: [Encode.self, Decode.self],
                                                     defaultSubcommand: Encode.self)
 }
 
