@@ -19,6 +19,12 @@ struct Encode: ParsableCommand {
 
     func run() throws {
         let rot = ROTAlgorithm(rotationDistance: globalOptions.rotationDistance)
-        print(rot.encode(inputString))
+        let outputString = rot.encode(inputString)
+        if globalOptions.verbose {
+            print("Encoding input string using a rotation distance of \(rot.rotationDistance)")
+            print("Input string: \(inputString)")
+            print("Output string: ", terminator: "")
+        }
+        print(outputString)
     }
 }
