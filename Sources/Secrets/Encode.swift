@@ -25,6 +25,11 @@ struct Encode: ParsableCommand {
             print("Input string: \(inputString)")
             print("Output string: ", terminator: "")
         }
-        print(outputString)
+
+        if (!globalOptions.hideResult) {
+            print(outputString)
+        } else {
+            print("<hidden>")
+        }
     }
 }
