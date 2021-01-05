@@ -1,0 +1,16 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "ROT",
+        "repositoryURL": "https://github.com/armadsen/ROT.swift.git",
+        "state": {
+          "branch": null,
+          "revision": "2b1a0fccaccc5ea122817b793a6fecf1d729aa60",
+          "version": "0.0.1"
+        }
+      }
+    ]
+  },
+  "version": 1
+}
