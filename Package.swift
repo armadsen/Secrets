@@ -6,7 +6,8 @@ import PackageDescription
 let package = Package(
     name: "Secrets",
     dependencies: [
-        .package(name: "ROT", url: "https://github.com/armadsen/ROT.swift.git", from: "0.0.1")
+        .package(name: "ROT", url: "https://github.com/armadsen/ROT.swift.git", from: "0.0.1"),
+        .package(url: "https://github.com/apple/swift-argument-parser", from: "0.3.0"),
     ],
     targets: [
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
@@ -14,7 +15,8 @@ let package = Package(
         .target(
             name: "Secrets",
             dependencies: [
-                .product(name: "ROT", package: "ROT")
+                .product(name: "ROT", package: "ROT"),
+                .product(name: "ArgumentParser", package: "swift-argument-parser"),
             ]),
         .testTarget(
             name: "SecretsTests",

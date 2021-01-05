@@ -1,11 +1,18 @@
 import Foundation
 import ROT
+import ArgumentParser
 
-let arguments = ProcessInfo.processInfo.arguments
-if (arguments.count < 2) {
-    print("You must specify a string to convert\n")
-    exit(0)
+struct Secrets: ParsableCommand {
+    static let configuration = CommandConfiguration(commandName: "secrets",
+                                                    abstract: "Create and decode secret messages")
+
+    @Argument(help: "The string you want to turn into a secret message")
+    var inputString: String
+
+    func run() throws {
+        let rot = ROTAlgorithm()
+        print(rot.encode(inputString))
+    }
 }
 
-let rot = ROTAlgorithm()
-print(rot.encode(arguments[1]))
+Secrets.main()
